@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from formulario.views import index
+from formulario.views import index, index1
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('formulario/', index),
+    path('prueba/', index1),
 ]
