@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from formulario.views import index, index1
+from app1.views import index0
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('interfaz/', index0),
     path('formulario/', index),
     path('prueba/', index1),
 ]

@@ -1,0 +1,32 @@
+body {
+    background: #bdc3c7;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button { 
+    display: flex;
+    flex-direction:column;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1;
+    background: transparent;
+    gap: .70rem;
+}
+button > div {
+    background: whitesmoke;
+    height: 1.8px;
+    width: 110%;
+    border-radius: 2px;
+    transition: all .5s;
+    transform-origin: left;
+}
+button:hover div:first-child {
+    transform: rotate(90deg);
+}
+button:hover div:nth-child(2) {
+    opacity: 0;
+}
+button:hover div:nth-child(3) {
+    transform: rotate(-90deg);
+}
