@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from blog.models import Configuracion
+from blog.models import Configuracion, Blog, Blog_post
 
 def Home(request):
     configuracion = Configuracion.objects.first()
@@ -10,10 +10,12 @@ def About(request):
     return render (request, "blog/about.html")
 
 def Blogs(request):
-    return render (request, "blog/blogs.html")
+    blog = Blog.objects.first()
+    return render (request, "blog/blogs.html", {"blog":blog})
 
 def Contact(request):
     return render (request, "blog/contact.html")
 
 def Post(request):
-    return render (request, "blog/post.html")
+    blog_post = Blog_post.objects.first()
+    return render (request, "blog/post.html", {"blog_post":blog_post})
