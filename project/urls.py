@@ -21,6 +21,6 @@ from formulario.views import index1, index, blog
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('formulario/', index1),
-    path('principal/', index),
+    path('', index),
     path('blog/', blog),
 ]
