@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from perfiles.views import Home, About, Blogs, Contact, Post
+from blog.views import Home, About, Blogs, Contact, Post
 
 
 urlpatterns = [
