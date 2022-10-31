@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from blog.views import Home, About, Blogs, Contact, Post
+from perfiles.views import PerfilList, PerfilCrear, PerfilBorrar, PerfilActualizar
 
 
 urlpatterns = [
@@ -24,5 +25,9 @@ urlpatterns = [
     path('about/', About),
     path('blogs/', Blogs),
     path('contact/', Contact),
-    path('post/', Post),
+    path('pages/', Post),
+    path('accounts/profile/', PerfilList.as_view()),
+    path('accounts/signup', PerfilCrear.as_view()),
+    path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view()),
+    path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view()),
 ]
