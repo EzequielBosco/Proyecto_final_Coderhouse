@@ -12,7 +12,11 @@
 {% block buscar %} {% endblock %}
 
 {% for perfil in object_list %}
-    <li>{{perfil}}</li>
+    <li>
+        {{perfil}}
+        <a href="{% url 'perfil-actualizar' perfil.id %}">Actualizar</a>
+        <a href="{% url 'perfil-borrar' perfil.id %}">Borrar</a>
+    </li>
 {% endfor %}    
 </ul>
 

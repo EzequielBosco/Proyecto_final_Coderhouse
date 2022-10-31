@@ -26,8 +26,8 @@ urlpatterns = [
     path('blogs/', Blogs),
     path('contact/', Contact),
     path('pages/', Post),
-    path('accounts/profile/', PerfilList.as_view()),
-    path('accounts/signup', PerfilCrear.as_view()),
-    path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view()),
-    path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view()),
+    path('accounts/profile/', PerfilList.as_view(), name="perfil-list"), 
+    path('accounts/signup', PerfilCrear.as_view(), name="perfil-crear"),
+    path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view(), name="perfil-borrar"),
+    path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view(), name="perfil-actualizar"),
 ]
