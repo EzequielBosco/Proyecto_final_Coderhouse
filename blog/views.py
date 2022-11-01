@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import TemplateView
 from blog.models import Configuracion, Blog, Blog_post
 
 def Home(request):
@@ -19,3 +20,19 @@ def Contact(request):
 def Post(request):
     blog_post = Blog_post.objects.first()
     return render (request, "blog/post.html", {"blog_post":blog_post})
+
+class Error404View(TemplateView):
+    template_name = "blog/error_404.html"
+
+class Error505View(TemplateView):
+    template_name = "blog/error_500.html"
+
+    @classmethod
+    def as_error_view(cls):
+
+        v = cls.as_view()
+        def view(request):
+            r = v(request)
+            r.render()
+            return r
+        return view

@@ -15,19 +15,22 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import Home, About, Blogs, Contact, Post
+from blog.views import Home, About, Blogs, Contact, Post, Error404View, Error505View
 from perfiles.views import PerfilList, PerfilCrear, PerfilBorrar, PerfilActualizar
-
+from django.conf.urls import handler404, handler500
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Home),
+    path('', Home, name='pagina-principal'),
     path('about/', About),
-    path('blogs/', Blogs),
+    path('pages/', Blogs, name="blogs"),
     path('contact/', Contact),
-    path('pages/', Post),
+    path('pages/<int:pk>/', Post),
     path('accounts/profile/', PerfilList.as_view(), name="perfil-list"), 
     path('accounts/signup', PerfilCrear.as_view(), name="perfil-crear"),
     path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view(), name="perfil-borrar"),
     path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view(), name="perfil-actualizar"),
 ]
+
+handler404 = Error404View.as_view()
+handler505 = Error505View.as_error_view()
