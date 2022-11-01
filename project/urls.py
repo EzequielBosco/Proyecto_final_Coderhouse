@@ -22,9 +22,9 @@ from django.conf.urls import handler404, handler500
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home, name='pagina-principal'),
-    path('about/', About),
+    path('about/', About, name='nosotros'),
     path('pages/', Blogs, name="blogs"),
-    path('contact/', Contact),
+    path('contact/', Contact, name="contacto"),
     path('pages/<int:pk>/', Post),
     path('accounts/profile/', PerfilList.as_view(), name="perfil-list"), 
     path('accounts/signup', PerfilCrear.as_view(), name="perfil-crear"),
@@ -33,4 +33,4 @@ urlpatterns = [
 ]
 
 handler404 = Error404View.as_view()
-handler505 = Error505View.as_error_view()
+handler500 = Error505View.as_error_view()
