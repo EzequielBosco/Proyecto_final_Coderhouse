@@ -8,14 +8,16 @@ def Home(request):
     return render (request, "blog/index.html", {"configuracion":configuracion})
 
 def About(request):
-    return render (request, "blog/about.html")
+    configuracion = Configuracion.objects.first()
+    return render (request, "blog/about.html", {"configuracion":configuracion})
 
 def Blogs(request):
     blog = Blog.objects.first()
     return render (request, "blog/blogs.html", {"blog":blog})
 
 def Contact(request):
-    return render (request, "blog/contact.html")
+    configuracion = Configuracion.objects.first()
+    return render (request, "blog/contact.html", {"configuracion":configuracion})
 
 def Post(request):
     blog_post = Blog_post.objects.first()
