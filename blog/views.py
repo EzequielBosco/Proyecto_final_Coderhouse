@@ -21,6 +21,9 @@ def Post(request):
     blog_post = Blog_post.objects.first()
     return render (request, "blog/post.html", {"blog_post":blog_post})
 
+def Signup(request):
+    return render (request, "blog/signup.html")
+
 class Error404View(TemplateView):
     template_name = "blog/error_404.html"
 

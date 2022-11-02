@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import Home, About, Blogs, Contact, Post, Error404View, Error505View
+from blog.views import Home, About, Blogs, Contact, Post, Signup, Error404View, Error505View
 from perfiles.views import PerfilList, PerfilCrear, PerfilBorrar, PerfilActualizar
 from django.conf.urls import handler404, handler500
 
@@ -28,6 +28,8 @@ urlpatterns = [
     path('pages/<int:pk>/', Post),
     path('accounts/profile/', PerfilList.as_view(), name="perfil-list"), 
     path('accounts/signup', PerfilCrear.as_view(), name="perfil-crear"),
+    path('accounts/signup/crear', Signup, name="crear"),
+    path('accounts/login', PerfilCrear.as_view(), name="perfil-crear"),
     path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view(), name="perfil-borrar"),
     path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view(), name="perfil-actualizar"),
 ]
