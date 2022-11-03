@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from blog.models import Configuracion, Blog, Blog_post
 
 def Home(request):
@@ -25,6 +25,9 @@ def Post(request):
 
 def Signup(request):
     return render (request, "blog/signup.html")
+
+class BlogList(ListView):
+    model = Blog
 
 class Error404View(TemplateView):
     template_name = "blog/error_404.html"

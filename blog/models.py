@@ -21,3 +21,6 @@ class Blog(models.Model):
     sub_titulo = models.CharField(max_length=40)
     autor = models.CharField(max_length=20)
     fecha = models.CharField(max_length=15)
+
+    def __str__(self):
+        return f"{self.titulo}, {self.sub_titulo}, {self.autor}, {self.fecha}"

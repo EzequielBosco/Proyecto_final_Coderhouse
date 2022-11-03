@@ -35,31 +35,41 @@
                     </ul>
                 </div>
             </div>
-        </nav> 
+        </nav>
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Borrar usuario</h1>
-                            <span class="subheading"></span>
+                            <h1>Blogs</h1>
+                            <span class="subheading">Blogs de la comunidad</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-6 px-lg-10">
-            <h4>Borrar:</h4>
-            <form method="post">
-                {% csrf_token %}
-                <h6>"¿ Estás seguro de borrar el perfil {{ object }} ?"</h6>
-                <input type="submit" value="SI">
-            </form>
+        <div class="container px-1 px-lg-4 col-lg-6">
+            <p>Navega por los blogs de la comunidad, o ingresa lo que más te interese en el buscador</p>
+            <div class="card mb-4">
+              <div class="card-header">Buscar</div>
+              <div class="card-body">
+                  <div class="input-group">
+                      <input class="form-control" type="text" placeholder="Ingresa tu busqueda..." aria-label="Ingresa tu busqueda..." aria-describedby="button-search" />
+                      <button class="btn btn-primary bg-dark" id="button-search" type="button">Ir!</button>                      
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <!-- Main Content-->
+        <div class="container px-8 px-lg-5">
+            <h4>Blogs:</h4>
+            {% for blog in object_list %}
             <p>
-            <a href="{% url 'perfil-list' %}">Volver a la lista de usuarios</a>
+                {{blog}}
             </p>
+            {% endfor %}  
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-10">
@@ -86,18 +96,4 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-
-    
-</body>
 </html>
