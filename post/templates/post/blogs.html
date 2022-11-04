@@ -1,7 +1,8 @@
 {% extends 'blog/base.html' %}
 {% block titulo %}
+{% load static %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/post-bg.jpg' %}');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
@@ -16,13 +17,13 @@
         <!-- Main Content-->
         <div class="container px-1 px-lg-4 col-lg-6">
             <p>Navega por los blogs de la comunidad, o ingresa lo que más te interese en el buscador</p>
-            <div class="card mb-4">
-              <div class="card-header">Buscar</div>
-              <div class="card-body">
+            <div class="card mb-4 col-lg-11">
+              <div class="card-header container"><h5>Buscar</h5></div>
+              <div class="card-body container mb-8 px-lg-4 col-lg-14">
                     <form action="{% url 'search-by-name-post' %}" method="get">
                         {% csrf_token %}
-                        <input type="search" name="post-titulo">
-                        <input type="submit" value="go">
+                        <input type="search" placeholder="Ingresa tu busqueda..." name="post-titulo">
+                        <input class="btn-primary text-uppercase endabled" type="submit" value="Ir!">
                     </form>     
                     </div>
                   </div>
@@ -33,12 +34,12 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                            <h1 class="post-title">{{post.titulo}}</h1>
+                        <a href="{% url 'blog-detail' post.id %}"><h1 class="post-title">{{post.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                     <!-- Divider-->
@@ -50,7 +51,7 @@
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                     <!-- Divider-->
@@ -62,7 +63,7 @@
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                     <!-- Divider-->
@@ -74,7 +75,7 @@
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                 </div>

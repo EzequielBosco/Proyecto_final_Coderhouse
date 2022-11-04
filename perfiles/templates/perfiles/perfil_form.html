@@ -19,11 +19,8 @@
             <form method="post">
                 {% csrf_token %}
                 {{form.as_p}}
-                <input type="submit" value="Crear">
+                <input class="btn btn-primary text-uppercase endabled" type="submit" value="Crear">
             </form>
-            <p>
-            <a href="{% url 'perfil-list' %}">Ir a la lista de usuarios</a>
-            </p>
         </div>
 {% endblock %}
 {% block contenido %}{% endblock %}

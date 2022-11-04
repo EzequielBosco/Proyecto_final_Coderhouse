@@ -20,7 +20,7 @@
     <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
-        <button type="submit">Iniciar sesión</button>
+        <button class="btn btn-primary text-uppercase endabled" type="submit">Iniciar sesión</button>
     </form>
     <p> ¿No tenes cuenta?
     <a href="{% url 'perfil-crear' %}">Crear una cuenta nueva</a>
