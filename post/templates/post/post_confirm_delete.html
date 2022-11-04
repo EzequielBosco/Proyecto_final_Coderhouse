@@ -6,8 +6,8 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Usuarios</h1>
-                            <span class="subheading">Lista de usuarios registrados</span>
+                            <h1>Borrar blog</h1>
+                            <span class="subheading"></span>
                         </div>
                     </div>
                 </div>
@@ -15,14 +15,16 @@
         </header>
         <!-- Main Content-->
         <div class="container px-6 px-lg-10">
-            <h4>Usuarios:</h4>
-                    {% for perfil in object_list %}
-                    <li>
-                        {{perfil}}
-                        <div>
-                        <p><a href="{% url 'perfil-actualizar' perfil.id %}">Actualizar</a> o <a href="{% url 'perfil-borrar' perfil.id %}">Borrar</a></p>
-                        </div>
-                    </li>
-                    {% endfor %}  
+            <h4>Borrar:</h4>
+            ¿ Estás seguro de borrar el blog {{post.titulo}}? 
+            <form method="post">
+                {{form}}
+                {% csrf_token %}
+                <input type="submit" value="Sí">
+            </form>
+        
+            <p>
+                <a href="{% url 'blog-list' %}">Volver a la lista de blogs</a>
+            </p>
 {% endblock %}
 {% block contenido %}{% endblock %}

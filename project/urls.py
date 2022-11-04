@@ -14,8 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from blog.views import Home, About, Blogs, Contact, Post, Signup, BlogList,Error404View
+from django.urls import path, include
+from blog.views import Home, About, Contact, Error404View
 from perfiles.views import PerfilList, PerfilCrear, PerfilBorrar, PerfilActualizar
 from django.conf.urls import handler404
 
@@ -23,16 +23,13 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home, name='pagina-principal'),
     path('about/', About, name='nosotros'),
-    path('pages/', Blogs, name="blogs"),
     path('contact/', Contact, name="contacto"),
-    path('pages/<int:pk>/', Post),
-    path('accounts/listablogs/', BlogList.as_view(), name="blogs-list"),
     path('accounts/profile/', PerfilList.as_view(), name="perfil-list"), 
     path('accounts/signup', PerfilCrear.as_view(), name="perfil-crear"),
-    path('accounts/signup/crear', Signup, name="crear"),
     path('accounts/login', PerfilCrear.as_view(), name="perfil-entrar"),
     path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view(), name="perfil-borrar"),
     path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view(), name="perfil-actualizar"),
+    path('post/', include('post.urls')),
 ]
 
 handler404 = Error404View.as_view()

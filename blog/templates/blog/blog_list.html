@@ -19,9 +19,12 @@
             <div class="card mb-4">
               <div class="card-header">Buscar</div>
               <div class="card-body">
-                  <div class="input-group">
-                      <input class="form-control" type="text" placeholder="Ingresa tu busqueda..." aria-label="Ingresa tu busqueda..." aria-describedby="button-search" />
-                      <button class="btn btn-primary bg-dark" id="button-search" type="button">Ir!</button>                      
+                    <form action="{% url 'search-by-name-post' %}" method="get">
+                        {% csrf_token %}
+                        <input type="search" placeholder="Ingresa tu busqueda..." name="post-title">
+                        <input type="submit" value="go">
+                        <button class="btn btn-primary bg-dark" id="button-search" type="button">Ir!</button>
+                    </form>                     
                     </div>
                   </div>
             </div>

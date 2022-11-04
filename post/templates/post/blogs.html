@@ -19,9 +19,11 @@
             <div class="card mb-4">
               <div class="card-header">Buscar</div>
               <div class="card-body">
-                  <div class="input-group">
-                      <input class="form-control" type="text" placeholder="Ingresa tu busqueda..." aria-label="Ingresa tu busqueda..." aria-describedby="button-search" />
-                      <button class="btn btn-primary bg-dark" id="button-search" type="button">Ir!</button>                      
+                    <form action="{% url 'search-by-name-post' %}" method="get">
+                        {% csrf_token %}
+                        <input type="search" name="post-titulo">
+                        <input type="submit" value="go">
+                    </form>     
                     </div>
                   </div>
             </div>
@@ -31,48 +33,48 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                            <h1 class="post-title">{{blog.titulo}}</h1>
-                            <h3 class="post-subtitle">{{blog.sub_titulo}}</h3>
+                            <h1 class="post-title">{{post.titulo}}</h1>
+                            <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
-                            <a href="#!">{{blog.autor}}</a> el {{blog.fecha}}
-                            <button class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit">Leer más →</button>
+                            <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                            <h1 class="post-title">{{blog.titulo}}</h1>
-                            <h3 class="post-subtitle">{{blog.sub_titulo}}</h3>
-                        <p class="post-meta">
-                            Creado por
-                            <a href="#!">{{blog.autor}}</a> el {{blog.fecha}}
-                            <button class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit">Leer más →</button>
+                        <h1 class="post-title">{{post.titulo}}</h1>
+                        <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                    <p class="post-meta">
+                        Creado por
+                        <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                            <h1 class="post-title">{{blog.titulo}}</h1>
-                            <h3 class="post-subtitle">{{blog.sub_titulo}}</h3>
-                        <p class="post-meta">
-                            Creado por
-                            <a href="#!">{{blog.autor}}</a> el {{blog.fecha}}
-                            <button class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit">Leer más →</button>
+                        <h1 class="post-title">{{post.titulo}}</h1>
+                        <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                    <p class="post-meta">
+                        Creado por
+                        <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                            <h1 class="post-title">{{blog.titulo}}</h1>
-                            <h3 class="post-subtitle">{{blog.sub_titulo}}</h3>
-                        <p class="post-meta">
-                            Creado por
-                            <a href="#!">{{blog.autor}}</a> el {{blog.fecha}}
-                            <button class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit">Leer más →</button>
+                        <h1 class="post-title">{{post.titulo}}</h1>
+                        <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                    <p class="post-meta">
+                        Creado por
+                        <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                         </p>
                     </div>
                 </div>

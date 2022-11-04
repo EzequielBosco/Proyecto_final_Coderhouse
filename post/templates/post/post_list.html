@@ -6,8 +6,8 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Usuarios</h1>
-                            <span class="subheading">Lista de usuarios registrados</span>
+                            <h1>Blogs</h1>
+                            <span class="subheading">Lista de blogs</span>
                         </div>
                     </div>
                 </div>
@@ -15,14 +15,16 @@
         </header>
         <!-- Main Content-->
         <div class="container px-6 px-lg-10">
-            <h4>Usuarios:</h4>
-                    {% for perfil in object_list %}
-                    <li>
-                        {{perfil}}
-                        <div>
-                        <p><a href="{% url 'perfil-actualizar' perfil.id %}">Actualizar</a> o <a href="{% url 'perfil-borrar' perfil.id %}">Borrar</a></p>
-                        </div>
+            <h4>blogs:</h4>
+            <ul>
+                {% for post in object_list %}
+                    <li>{{post}} 
+                        <a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
+                        <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a>
                     </li>
-                    {% endfor %}  
+                {% endfor %}
+            </ul>
+            
+            <a href="{% url 'blog-crear' %}">Crear un nuevo blog</a>
 {% endblock %}
 {% block contenido %}{% endblock %}
