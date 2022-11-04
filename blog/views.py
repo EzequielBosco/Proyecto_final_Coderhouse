@@ -8,16 +8,14 @@ def Home(request):
     return render (request, "blog/index.html", {"configuracion":configuracion})
 
 def About(request):
-    configuracion = Configuracion.objects.first()
-    return render (request, "blog/about.html", {"configuracion":configuracion})
+    return render (request, "blog/about.html")
 
 def Blogs(request):
     blog = Blog.objects.first()
     return render (request, "blog/blogs.html", {"blog":blog})
 
 def Contact(request):
-    configuracion = Configuracion.objects.first()
-    return render (request, "blog/contact.html", {"configuracion":configuracion})
+    return render (request, "blog/contact.html")
 
 def Post(request):
     blog_post = Blog_post.objects.first()
@@ -31,16 +29,3 @@ class BlogList(ListView):
 
 class Error404View(TemplateView):
     template_name = "blog/error_404.html"
-
-class Error505View(TemplateView):
-    template_name = "blog/error_500.html"
-
-    @classmethod
-    def as_error_view(cls):
-
-        v = cls.as_view()
-        def view(request):
-            r = v(request)
-            r.render()
-            return r
-        return view
