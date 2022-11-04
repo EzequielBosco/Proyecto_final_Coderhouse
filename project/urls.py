@@ -16,7 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from blog.views import Home, About, Contact, Error404View
-from perfiles.views import PerfilList, PerfilCrear, PerfilBorrar, PerfilActualizar
 from django.conf.urls import handler404
 
 urlpatterns = [
@@ -24,11 +23,7 @@ urlpatterns = [
     path('', Home, name='pagina-principal'),
     path('about/', About, name='nosotros'),
     path('contact/', Contact, name="contacto"),
-    path('accounts/profile/', PerfilList.as_view(), name="perfil-list"), 
-    path('accounts/signup', PerfilCrear.as_view(), name="perfil-crear"),
-    path('accounts/login', PerfilCrear.as_view(), name="perfil-entrar"),
-    path('accounts/profile/<int:pk>/borrar', PerfilBorrar.as_view(), name="perfil-borrar"),
-    path('accounts/profile/<int:pk>/actualizar', PerfilActualizar.as_view(), name="perfil-actualizar"),
+    path('accounts/', include('perfiles.urls')),
     path('post/', include('post.urls')),
 ]
 

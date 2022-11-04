@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+{% block titulo %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Sesión cerrada</h1>
+                        <span class="subheading"></span>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <div class="container px-2 px-lg-6">
+        <h3>Se cerro la sesión</h3>
+    <p>
+    <a href="{% url 'pagina-principal' %}">Ir al inicio</a>
+    </p>
+{% endblock %}
+{% block contenido %}{% endblock %}

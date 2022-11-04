@@ -17,14 +17,19 @@
         <div class="container px-6 px-lg-10">
             <h4>blogs:</h4>
             <ul>
+                <p>
+                <a href="{% url 'blog-logout' %}">Salir de la sesión</a>
+                </p>
                 {% for post in object_list %}
                     <li>{{post}} 
                         <a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
                         <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a>
+                        <a class="btn btn-primary text-uppercase endabled bg-dark" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
                     </li>
                 {% endfor %}
             </ul>
-            
+            <p>
             <a href="{% url 'blog-crear' %}">Crear un nuevo blog</a>
+            </p>
 {% endblock %}
 {% block contenido %}{% endblock %}

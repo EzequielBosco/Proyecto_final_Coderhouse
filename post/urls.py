@@ -1,5 +1,6 @@
 from django.urls import path
 from post.views import *
+from post.views import PostList, CreatePost, DetailPost, UpdatePost, DeletePost, SearchPostByname, BlogLogin, BlogLogout
 
 urlpatterns = [
     path('', Blogs, name="index-blog"),
@@ -9,4 +10,6 @@ urlpatterns = [
     path('update/<int:pk>/', UpdatePost.as_view(), name="blog-actualizar"),
     path('delete/<int:pk>', DeletePost.as_view(), name="blog-borrar"),
     path('search-by-name/', SearchPostByname.as_view(), name="search-by-name-post"),
+    path('login/', BlogLogin.as_view(), name="blog-login"),
+    path('logout/', BlogLogout.as_view(), name="blog-logout"),
 ]
