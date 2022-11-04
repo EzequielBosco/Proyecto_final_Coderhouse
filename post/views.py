@@ -42,5 +42,5 @@ class DeletePost(DeleteView):
 
 class SearchPostByname(ListView):
     def get_queryset(self):
-        blog_title = self.request.GET.get('post-titulo')
-        return Post.objects.filter(titulo__icontains=blog_title)
+        post_title = self.request.GET.get('post-titulo')
+        return Post.objects.filter(titulo__icontains=post_title)

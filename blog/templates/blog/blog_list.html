@@ -19,7 +19,7 @@
             <div class="card mb-4">
               <div class="card-header">Buscar</div>
               <div class="card-body">
-                    <form action="{% url 'search-by-name-post' %}" method="get">
+                    <form action="{% url 'search-by-title-post' %}" method="get">
                         {% csrf_token %}
                         <input type="search" placeholder="Ingresa tu busqueda..." name="post-title">
                         <input type="submit" value="go">
