@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import Home, About, Blogs, Contact, Post, Signup, BlogList,Error404View, Error505View
+from blog.views import Home, About, Blogs, Contact, Post, Signup, BlogList,Error404View
 from perfiles.views import PerfilList, PerfilCrear, PerfilBorrar, PerfilActualizar
-from django.conf.urls import handler404, handler500
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -36,4 +36,3 @@ urlpatterns = [
 ]
 
 handler404 = Error404View.as_view()
-handler500 = Error505View.as_error_view()
