@@ -1,7 +1,7 @@
 from django import forms
-from perfiles.models import Perfil
+from perfiles.models import User
 
-class PerfilForm(forms.ModelForm):
+class UserCreationForm(forms.ModelForm):
     class Meta:
-        model = Perfil
+        model = User
         fields = ["nombre_usuario", "email", "contraseña"]

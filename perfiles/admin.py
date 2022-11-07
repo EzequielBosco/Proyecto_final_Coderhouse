@@ -1,4 +1,4 @@
 from django.contrib import admin
-from perfiles.models import Perfil
+from perfiles.models import User
 
-admin.site.register(Perfil)
+admin.site.register(User)
