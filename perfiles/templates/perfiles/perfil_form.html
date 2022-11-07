@@ -7,20 +7,19 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Registro</h1>
-                            <span class="subheading">Complete el formulario para registrarse</span>
+                            <h1>Actualizar</h1>
+                            <span class="subheading">Completa el formulario para actualizar</span>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-2 px-lg-6">
+        <div class="container px-6 px-lg-10">
             <h4>Formulario:</h4>
-            <form method="post">
-                {% csrf_token %}
-                {{form.as_p}}
-                <input class="btn btn-primary text-uppercase endabled" type="submit" value="Crear">
-            </form>
-        </div>
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="btn btn-primary text-uppercase endabled" type="submit" value="Guardar">
+        </form>
 {% endblock %}

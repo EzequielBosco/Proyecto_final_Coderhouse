@@ -1,31 +1,30 @@
 from django.contrib.auth.views import LoginView, LogoutView
 from django.contrib.auth.forms import UserCreationForm
-# from django.contrib.auth.admin import User
+from django.contrib.auth.admin import User
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from django.urls import reverse_lazy
-from perfiles.models import User
-from perfiles.forms import UserCreationForm
+from perfiles.models import Perfil
 
-class UserList(ListView):
-    model = User
+class PerfilList(ListView):
+    model = Perfil
 # borrar
 class PerfilCrear(CreateView):
-    model = User
+    model = Perfil
     success_url = reverse_lazy("perfil-list")
     fields = ["nombre_usuario", "email", "contraseña"]
 # borrar
 class PerfilBorrar(DeleteView):
-    model = User
+    model = Perfil
     success_url = reverse_lazy("perfil-list")
 # borrar
 class PerfilActualizar(UpdateView):
-    model = User
+    model = Perfil
     success_url = reverse_lazy("perfil-list")
     fields = ["nombre_usuario", "email", "contraseña"]
 
 class BlogLogin(LoginView):
     template_name = 'perfiles/blog_login.html'
-    next_page = reverse_lazy("blog-list")
+    next_page = reverse_lazy("index-blog")
 
 class BlogLogout(LogoutView):
     template_name = 'perfiles/blog_logout.html'

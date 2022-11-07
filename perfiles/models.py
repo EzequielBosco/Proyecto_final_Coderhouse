@@ -1,6 +1,6 @@
 from django.db import models
 
-class User(models.Model):
+class Perfil(models.Model):
     nombre_usuario = models.CharField(max_length=100)
     nombre = models.CharField(max_length=20)
     apellido = models.CharField(max_length=30)

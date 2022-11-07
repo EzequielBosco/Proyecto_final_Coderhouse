@@ -17,7 +17,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from blog.views import Home, About, Contact, Error404View
+from blog.views import Home, About, Contact, Blogs, Error404View
 from django.conf.urls import handler404
 
 urlpatterns = [
@@ -25,8 +25,9 @@ urlpatterns = [
     path('', Home, name='pagina-principal'),
     path('about/', About, name='nosotros'),
     path('contact/', Contact, name="contacto"),
+    path('pages/', Blogs, name="index-blog"),
     path('accounts/', include('perfiles.urls')),
-    path('post/', include('post.urls')),
+    path('pages/', include('post.urls')),
 ]
 
 handler404 = Error404View.as_view()

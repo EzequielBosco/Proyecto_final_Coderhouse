@@ -3,7 +3,6 @@ from post.views import *
 from post.views import PostList, CreatePost, DetailPost, UpdatePost, DeletePost, SearchPostByname
 
 urlpatterns = [
-    path('', Blogs, name="index-blog"),
     path('list/', PostList.as_view(), name="blog-list"),
     path('create/', CreatePost.as_view(), name="blog-crear"),
     path('detail/<int:pk>/', DetailPost.as_view(), name="blog-detail"),
