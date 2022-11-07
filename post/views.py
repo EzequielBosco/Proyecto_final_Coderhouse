@@ -11,8 +11,8 @@ from post.models import Post
 
 @login_required
 def Blogs(request):
-    post = Post.objects.first()
-    return render(request, 'post/blogs.html', {"post":post})
+    posts = Post.objects.order_by('-fecha').all()
+    return render(request, 'post/blogs.html', {"post":posts})
 
 class BlogLogin(LoginView):
     template_name = 'post/blog_login.html'
@@ -54,5 +54,5 @@ class BlogSignUp(CreateView):
 
 class ProfileUpdate(UpdateView):
     model = User
-    fields = ['username']
+    fields = ['nombre_usuario', 'nombre', 'apellido', 'email', 'contraseña']
     success_url = reverse_lazy("blog-login")

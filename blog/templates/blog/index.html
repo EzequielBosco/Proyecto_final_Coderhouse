@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %}
-{% block titulo %}
+{% block nav %}{% endblock %}
+{% block contenido %}
 {% load static %}
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('{% static 'blog/assets/img/home-bg.jpg' %}');">
@@ -27,4 +28,3 @@
             </div>
         </div> 
 {% endblock %}
-{% block contenido %}{% endblock %}

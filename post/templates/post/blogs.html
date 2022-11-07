@@ -1,5 +1,6 @@
 {% extends 'blog/base.html' %}
-{% block titulo %}
+{% block nav %}{% endblock %}
+{% block contenido %}
 {% load static %}
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('{% static 'blog/assets/img/post-bg.jpg' %}');">
@@ -33,53 +34,108 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
+                    {% if  post.0 %}
                     <div class="post-preview">
-                        <a href="{% url 'blog-detail' post.id %}"><h1 class="post-title">{{post.titulo}}</h1></a>
-                            <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ post.0.image.url }}" alt="..." /></a>
+                        <a href=""><h1 class="post-title">{{post.0.titulo}}</h1></a>
+                            <h3 class="post-subtitle">{{post.0.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
-                            <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                            <a href="{% url 'perfil-list' %}">{{post.0.autor}}</a> el {{post.0.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
                         </p>
                     </div>
+                    {% endif %}
+                    {% if  post.1 %}
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <h1 class="post-title">{{post.titulo}}</h1>
-                        <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                        <a href="!#"><img style="max-width:100%;" class="card-img-top" src="{% static 'blog/assets/img/about-bg.jpg' %}" alt="..." /></a>
+                        <h1 class="post-title">{{post.1.titulo}}</h1>
+                        <h3 class="post-subtitle">{{post.1.sub_titulo}}</h3>
                     <p class="post-meta">
                         Creado por
-                        <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                        <a href="{% url 'perfil-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
                         </p>
                     </div>
+                    {% endif %}
+                    {% if  post.2 %}
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <h1 class="post-title">{{post.titulo}}</h1>
-                        <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
-                    <p class="post-meta">
-                        Creado por
-                        <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.2.image.url }}" alt="..." /></a>
+                        <a href=""><h1 class="post-title">{{post.2.titulo}}</h1></a>
+                            <h3 class="post-subtitle">{{post.2.sub_titulo}}</h3>
+                        <p class="post-meta">
+                            Creado por
+                            <a href="{% url 'perfil-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
                         </p>
                     </div>
+                    {% endif %}
+                    {% if  post.3 %}
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.3.image.url }}" alt="..." /></a>
+                        <a href=""><h1 class="post-title">{{post.3.titulo}}</h1></a>
+                            <h3 class="post-subtitle">{{post.3.sub_titulo}}</h3>
+                        <p class="post-meta">
+                            Creado por
+                            <a href="{% url 'perfil-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% if  post.4 %}
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <h1 class="post-title">{{post.titulo}}</h1>
-                        <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
-                    <p class="post-meta">
-                        Creado por
-                        <a href="{% url 'perfil-list' %}">{{post.autor}}</a> el {{post.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.4.image.url }}" alt="..." /></a>
+                        <a href=""><h1 class="post-title">{{post.4.titulo}}</h1></a>
+                            <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
+                        <p class="post-meta">
+                            Creado por
+                            <a href="{% url 'perfil-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
                         </p>
                     </div>
+                    {% endif %}
+                    {% if  post.4 %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.4.image.url }}" alt="..." /></a>
+                        <a href=""><h1 class="post-title">{{post.4.titulo}}</h1></a>
+                            <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
+                        <p class="post-meta">
+                            Creado por
+                            <a href="{% url 'perfil-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                        </p>
+                    </div>
+                    {% endif %}
+                    {% if  post.5 %}
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{% static 'blog/assets/img/contact-bg.jpg' %}" alt="..." /></a>
+                        <a href=""><h1 class="post-title">{{post.5.titulo}}</h1></a>
+                            <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
+                        <p class="post-meta">
+                            Creado por
+                            <a href="{% url 'perfil-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                        </p>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
 {% endblock %}
-{% block contenido %}{% endblock %}
