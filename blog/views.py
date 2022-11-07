@@ -12,8 +12,5 @@ def About(request):
 def Contact(request):
     return render (request, "blog/contact.html")
 
-def Signup(request):
-    return render (request, "blog/signup.html")
-
 class Error404View(TemplateView):
     template_name = "blog/error_404.html"

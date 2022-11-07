@@ -50,7 +50,7 @@ class SearchPostByname(ListView):
 class BlogSignUp(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("blog-login")
-    template_name = "registration/signup.html"
+    template_name = "post/signup.html"
 
 class ProfileUpdate(UpdateView):
     model = User
