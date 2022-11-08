@@ -34,9 +34,11 @@
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
-                    {% if  post.0 %}
+                    {% if post.0 %}
                     <div class="post-preview">
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ post.0.image.url }}" alt="..." /></a>
+                        {% if  post.0.imagen %}
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ post.0.imagen.url }}" alt="..." /></a>        
+                        {% endif %}
                         <a href=""><h1 class="post-title">{{post.0.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.0.sub_titulo}}</h3>
                         <p class="post-meta">
@@ -51,7 +53,9 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{% static 'blog/assets/img/about-bg.jpg' %}" alt="..." /></a>
+                        {% if  post.1.imagen %}
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ post.1.imagen.url }}" alt="..." /></a>
+                        {% endif %}
                         <h1 class="post-title">{{post.1.titulo}}</h1>
                         <h3 class="post-subtitle">{{post.1.sub_titulo}}</h3>
                     <p class="post-meta">
@@ -66,7 +70,9 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.2.image.url }}" alt="..." /></a>
+                        {% if  post.2.imagen %}
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.2.imagen.url }}" alt="..." /></a>
+                        {% endif %}
                         <a href=""><h1 class="post-title">{{post.2.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.2.sub_titulo}}</h3>
                         <p class="post-meta">
@@ -80,7 +86,9 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.3.image.url }}" alt="..." /></a>
+                        {% if  post.3.imagen %}
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.3.imagen.url }}" alt="..." /></a>
+                        {% endif %}
                         <a href=""><h1 class="post-title">{{post.3.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.3.sub_titulo}}</h3>
                         <p class="post-meta">
@@ -95,7 +103,9 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.4.image.url }}" alt="..." /></a>
+                        {% if  post.4.imagen %}
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.4.imagen.url }}" alt="..." /></a>
+                        {% endif %}
                         <a href=""><h1 class="post-title">{{post.4.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
                         <p class="post-meta">
@@ -110,8 +120,9 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="div mb-4 post-preview">
+                        {% if  post.5.imagen %}
                         <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.5.imagen.url }}" alt="..." /></a>
-                        <a href=""><h1 class="post-title">{{post.5.titulo}}</h1></a>
+                        {% endif %}<a href=""><h1 class="post-title">{{post.5.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
