@@ -17,30 +17,35 @@
         <!-- Main Content-->
         <div class="container px-6 px-lg-10">
             <h4>Blogs:</h4>
-        
-<main>
-
-<main>
-
-<main>
-
-    <p>
-        {% if user.is_authenticated %}
-        <a href="{% url 'blog-crear' %}">Crear un nuevo blog</a>
-        <a href="{% url 'blog-logout' %}">Salir de la sesión</a>
-        {% endif %}
-    </p>
-            <ul>
+            <p>
+                {% if user.is_authenticated %}
+                <a href="{% url 'blog-crear' %}">Crear un nuevo blog</a>
+                <a href="{% url 'blog-logout' %}">Salir de la sesión</a>
+                {% endif %}
+            </p>
+            <table class="table">
+                <tr><th>ID</th>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Fecha de publicación</th>
+                    {% if user.is_authenticated %}
+                    <th>Acciones</th>
+                    {% endif %}
+                </tr>
                 {% for post in object_list %}
-                    <li>{{post}} 
-                        <p>
-                        {% if user.is_authenticated %}
-                        <a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
-                        <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a>
-                        {% endif %}
-                        <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
-                        </p>
-                    </li>
+                    <tr>
+                        <td>{{post.id}}</td>
+                        <td>{{post.titulo}}</td>
+                        <td>{{post.autor}}</td>
+                        <td>{{post.fecha}}</td>
+                        <td>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>
+                            {% if user.is_authenticated %}
+                            <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
+                            <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a></p>
+                            {% endif %}
+                        </td>
+                    </tr>
                 {% endfor %}
-            </ul>
+            </table>
 {% endblock %}

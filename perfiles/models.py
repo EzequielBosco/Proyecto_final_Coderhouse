@@ -8,4 +8,4 @@ class Perfil(models.Model):
     contraseña = models.CharField(max_length=20)
 
     def __str__(self):
-        return f"ID:{self.id}, Usuario:{self.nombre_usuario}, Correo:{self.email}, Contraseña:{self.contraseña}"
+        return f"ID:{self.id}, Usuario:{self.nombre_usuario}, Correo:{self.email}"

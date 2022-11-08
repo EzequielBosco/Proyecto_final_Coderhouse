@@ -17,11 +17,13 @@
         <!-- Main Content-->
         <div class="container px-2 px-lg-6">
             <h4>Crear blog:</h4>
-                <form  enctype='multipart/form-data' method="post">
+            {% if user.is_authenticated %}
+            <form  enctype='multipart/form-data' method="post">
                 {% csrf_token %}
                 {{form.as_p}}
                 <input class="btn btn-primary text-uppercase endabled" type="submit" value="Guardar">
             </form>
+            {% endif %}
         
             <p>
                 <a href="{% url 'blog-list' %}">Volver a la lista de blogs</a>

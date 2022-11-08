@@ -6,7 +6,7 @@ from post.models import Post
 class PostList(LoginRequiredMixin, ListView):
     model = Post
 
-class CreatePost(CreateView):
+class CreatePost(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['titulo', 'sub_titulo', 'cuerpo', 'imagen']
     success_url = reverse_lazy("blog-list")

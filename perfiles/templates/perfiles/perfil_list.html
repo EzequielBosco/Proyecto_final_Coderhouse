@@ -16,13 +16,29 @@
         </header>
         <!-- Main Content-->
         <div class="container px-6 px-lg-10">
-            <h4>Usuarios:</h4>
-                    {% for perfil in object_list %}
-                    <li>
-                        {{perfil}}
-                        <div>
-                        <p><a href="{% url 'perfil-actualizar' perfil.id %}">Actualizar</a> o <a href="{% url 'perfil-borrar' perfil.id %}">Borrar</a></p>
-                        </div>
-                    </li>
-                    {% endfor %}  
+            <h4>Usuarios:</h4> <div><p><a href="{% url 'profile-update' user.id %}">Actualizar usuario actual</a></p></div>
+            <table class="table">
+                <tr><th>ID</th>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                    {% if user.is_authenticated %}
+                    <th>Acciones</th>
+                    {% endif %}
+                </tr>
+                {% for perfil in object_list %}
+                    <tr>
+                        <td>{{perfil.id}}</td>
+                        <td>{{perfil.nombre_usuario}}</td>
+                        <td>{{perfil.email}}</td>
+                        <td>
+                            {% if user.is_authenticated %}
+                            <div>
+                            <p><a href="{% url 'perfil-actualizar' perfil.id %}">Actualizar</a></p>
+                            <p><a href="{% url 'perfil-borrar' perfil.id %}">Borrar</a>
+                            </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
 {% endblock %}
