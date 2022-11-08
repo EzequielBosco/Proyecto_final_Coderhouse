@@ -51,7 +51,7 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="!#"><img style="max-width:100%;" class="card-img-top" src="{% static 'blog/assets/img/about-bg.jpg' %}" alt="..." /></a>
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{% static 'blog/assets/img/about-bg.jpg' %}" alt="..." /></a>
                         <h1 class="post-title">{{post.1.titulo}}</h1>
                         <h3 class="post-subtitle">{{post.1.sub_titulo}}</h3>
                     <p class="post-meta">
@@ -109,8 +109,8 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview">
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{% static 'blog/assets/img/contact-bg.jpg' %}" alt="..." /></a>
+                    <div class="div mb-4 post-preview">
+                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.5.imagen.url }}" alt="..." /></a>
                         <a href=""><h1 class="post-title">{{post.5.titulo}}</h1></a>
                             <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
                         <p class="post-meta">
