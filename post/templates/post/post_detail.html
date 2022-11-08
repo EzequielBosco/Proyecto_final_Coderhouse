@@ -18,14 +18,22 @@
         </header>
         <!-- Main Content-->
         <div class="container px-2 px-lg-8">
-            {% if user.is_authenticated %}
-            <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
-            <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a></p>
-            {% endif %}
-            {{object}}
-        {% if  object.imagen %}
-        <img height="255" src="{{ object.imagen.url }}"/>
-        {% endif %}
+            <div class="post-preview">
+                <h1 class="post-title">{{post.titulo}}</h1>
+                <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                {% if  post.imagen %}
+                <img style="max-width:100%;" class="card-img-top" src="{{ post.imagen.url }}"/>    
+                {% endif %}
+                <p>{{post.cuerpo}}</p>
+                <p class="post-meta">
+                Creado por 
+                <a href="{% url 'profile-detail' user.id %}">{{post.autor}}</a> el {{post.fecha}}
+                </p>
+                {% if user.is_authenticated %}
+                <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
+                <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a></p>
+                {% endif %}
+            </div>
         <p><a href="{% url 'blog-list' %}">Ir a la lista de blogs</a></p>
         <a href="{% url 'index-blog' %}">
         <p>Ir a blogs de la comunidad</a></p>

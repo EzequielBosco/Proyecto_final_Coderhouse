@@ -45,7 +45,7 @@
                         <h3 class="post-subtitle">{{post.0.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por 
-                            <a href="{% url 'perfil-list' %}">{{post.0.autor}}</a> el {{post.0.fecha}}
+                            <a href="{% url 'user-list' %}">{{post.0.autor}}</a> el {{post.0.fecha}}
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.0.id %}">Leer más →</a>
                         </p>
                     </div>
@@ -62,7 +62,7 @@
                         <h3 class="post-subtitle">{{post.1.sub_titulo}}</h3>
                     <p class="post-meta">
                         Creado por
-                        <a href="{% url 'perfil-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
+                        <a href="{% url 'user-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.1.id %}">Leer más →</a>
                         </p>
                     </div>
@@ -79,7 +79,7 @@
                         <h3 class="post-subtitle">{{post.2.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
-                            <a href="{% url 'perfil-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
+                            <a href="{% url 'user-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.2.id %}">Leer más →</a>
                         </p>
                     </div>
@@ -95,7 +95,7 @@
                         <h3 class="post-subtitle">{{post.3.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
-                            <a href="{% url 'perfil-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
+                            <a href="{% url 'user-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.3.id %}">Leer más →</a>
                         </p>
                     </div>
@@ -112,7 +112,7 @@
                         <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
-                            <a href="{% url 'perfil-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
+                            <a href="{% url 'user-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.4.id %}">Leer más →</a>
                         </p>
                     </div>
@@ -129,13 +129,13 @@
                         <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
-                            <a href="{% url 'perfil-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
+                            <a href="{% url 'user-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.5.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
                 </div>
             </div>
-            <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a></p>
+            <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a> | <a href="{% url 'profile-update' user.id %}">Actualizar usuario</a></p>
         </div>
 {% endblock %}

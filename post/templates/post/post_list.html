@@ -36,7 +36,7 @@
                     <tr>
                         <td>{{post.id}}</td>
                         <td>{{post.titulo}}</td>
-                        <td>{{post.autor}}</td>
+                        <td><a href="{% url 'user-list' %}">{{post.autor}}</a></td>
                         <td>{{post.fecha}}</td>
                         <td>
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>

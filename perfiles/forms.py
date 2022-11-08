@@ -1,7 +1,7 @@
 from django import forms
-from perfiles.models import Perfil
+from django.contrib.auth.admin import User
 
-class PerfilForm(forms.ModelForm):
+class UserForm(forms.ModelForm):
     class Meta:
-        model = Perfil
-        fields = ["nombre_usuario", "email", "contraseña"]
+        model = User
+        fields = ['username', 'first_name', 'last_name', 'email']

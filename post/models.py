@@ -9,4 +9,4 @@ class Post(models.Model):
     imagen = models.ImageField(upload_to="imagenpost", null=True, blank=True)
 
     def __str__(self):
-        return f"Id: {self.id}, Titulo: {self.titulo},   Autor: {self.autor}"
+        return f"Id: {self.id}, Titulo: {self.titulo}, Autor: {self.autor}"
