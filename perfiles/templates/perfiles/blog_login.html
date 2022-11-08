@@ -27,4 +27,7 @@
     <p> ¿No tenés cuenta?
     <a href="{% url 'blog-signup' %}">Crear una cuenta nueva</a>
     </p>
+    {% if user.is_authenticated %}
+    <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a></p>
+    {% endif %}
 {% endblock %}

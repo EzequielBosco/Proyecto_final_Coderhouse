@@ -16,35 +16,37 @@
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-1 px-lg-4 col-lg-6">
+        <div class="container px-1 px-lg-4 col-lg-8">
             <p>Navega por los blogs de la comunidad, o ingresa lo que más te interese en el buscador</p>
-            <div class="card mb-4 col-lg-11">
-              <div class="card-header container"><h5>Buscar</h5></div>
-              <div class="card-body container mb-8 px-lg-4 col-lg-14">
-                    <form action="{% url 'search-by-name-post' %}" method="get">
-                        {% csrf_token %}
-                        <input type="search" placeholder="Ingresa tu busqueda..." name="post-titulo">
-                        <input class="btn-primary text-uppercase endabled" type="submit" value="Ir!">
-                    </form>     
-                    </div>
-                  </div>
+        </div>
+        <div class="container col-lg-5">
+        <div class="card mb-4 col-lg-10">
+            <div class="card-header"><h5>Buscar</h5></div>
+                <div class="card-body mb-10 px-lg-4 col-lg-10">
+                <form action="{% url 'search-by-name-post' %}" method="get">
+                    {% csrf_token %}
+                    <input type="search" placeholder="Ingresa tu busqueda..." name="post-titulo">
+                    <input class="btn-primary text-uppercase endabled" type="submit" value="Ir!">
+                </form>     
+                </div>
             </div>
         </div>
-        <div class="container px-4 px-lg-5">
+        </div>
+        <div class="container px-4 px-lg-8">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     {% if post.0 %}
                     <div class="post-preview">
                         {% if  post.0.imagen %}
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ post.0.imagen.url }}" alt="..." /></a>        
+                        <a href="{% url 'blog-detail' post.0.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.0.imagen.url }}"/></a>        
                         {% endif %}
-                        <a href=""><h1 class="post-title">{{post.0.titulo}}</h1></a>
-                            <h3 class="post-subtitle">{{post.0.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.0.id %}"><h1 class="post-title">{{post.0.titulo}}</h1></a>
+                        <h3 class="post-subtitle">{{post.0.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por 
                             <a href="{% url 'perfil-list' %}">{{post.0.autor}}</a> el {{post.0.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.0.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -54,14 +56,14 @@
                     <!-- Post preview-->
                     <div class="post-preview">
                         {% if  post.1.imagen %}
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ post.1.imagen.url }}" alt="..." /></a>
+                        <a href="{% url 'blog-detail' post.1.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.1.imagen.url }}"/></a>
                         {% endif %}
-                        <h1 class="post-title">{{post.1.titulo}}</h1>
+                        <a href="{% url 'blog-detail' post.1.id %}"><h1 class="post-title">{{post.1.titulo}}</h1></a>
                         <h3 class="post-subtitle">{{post.1.sub_titulo}}</h3>
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'perfil-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.1.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -71,14 +73,14 @@
                     <!-- Post preview-->
                     <div class="post-preview">
                         {% if  post.2.imagen %}
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.2.imagen.url }}" alt="..." /></a>
+                        <a href="{% url 'blog-detail' post.2.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.2.imagen.url }}"/></a>
                         {% endif %}
-                        <a href=""><h1 class="post-title">{{post.2.titulo}}</h1></a>
-                            <h3 class="post-subtitle">{{post.2.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.2.id %}"><h1 class="post-title">{{post.2.titulo}}</h1></a>
+                        <h3 class="post-subtitle">{{post.2.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'perfil-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.2.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -87,14 +89,14 @@
                     <!-- Post preview-->
                     <div class="post-preview">
                         {% if  post.3.imagen %}
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.3.imagen.url }}" alt="..." /></a>
+                        <a href="{% url 'blog-detail' post.3.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.3.imagen.url }}"/></a>
                         {% endif %}
-                        <a href=""><h1 class="post-title">{{post.3.titulo}}</h1></a>
-                            <h3 class="post-subtitle">{{post.3.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.3.id %}"><h1 class="post-title">{{post.3.titulo}}</h1></a>
+                        <h3 class="post-subtitle">{{post.3.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'perfil-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.3.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -104,14 +106,14 @@
                     <!-- Post preview-->
                     <div class="post-preview">
                         {% if  post.4.imagen %}
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.4.imagen.url }}" alt="..." /></a>
+                        <a href="{% url 'blog-detail' post.4.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.4.imagen.url }}"/></a>
                         {% endif %}
-                        <a href=""><h1 class="post-title">{{post.4.titulo}}</h1></a>
-                            <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.4.id %}"><h1 class="post-title">{{post.4.titulo}}</h1></a>
+                        <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'perfil-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.4.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -121,17 +123,19 @@
                     <!-- Post preview-->
                     <div class="div mb-4 post-preview">
                         {% if  post.5.imagen %}
-                        <a href=""><img style="max-width:100%;" class="card-img-top" src="{{ posts.5.imagen.url }}" alt="..." /></a>
-                        {% endif %}<a href=""><h1 class="post-title">{{post.5.titulo}}</h1></a>
-                            <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.5.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.5.imagen.url }}"/></a>
+                        {% endif %}
+                        <a href="{% url 'blog-detail' post.5.id %}"><h1 class="post-title">{{post.5.titulo}}</h1></a>
+                        <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'perfil-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="">Leer más →</a>
+                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.5.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
                 </div>
             </div>
+            <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a></p>
         </div>
 {% endblock %}

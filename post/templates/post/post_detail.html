@@ -8,8 +8,8 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Blog</h1>
-                            <span class="subheading"></span>
+                            <h1>{{post.titulo}}</h1>
+                            <span class="subheading">{{post.sub_titulo}}</span>
                         </div>
                         </p>
                     </div>
@@ -17,12 +17,17 @@
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-2 px-lg-6">
+        <div class="container px-2 px-lg-8">
+            {% if user.is_authenticated %}
+            <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
+            <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a></p>
+            {% endif %}
             {{object}}
         {% if  object.imagen %}
         <img height="255" src="{{ object.imagen.url }}"/>
         {% endif %}
-            <a href="{% url 'blog-list' %}">
-            <p>Volver a la lista de blogs</a></p>
+        <p><a href="{% url 'blog-list' %}">Ir a la lista de blogs</a></p>
+        <a href="{% url 'index-blog' %}">
+        <p>Ir a blogs de la comunidad</a></p>
         </div>
 {% endblock %}
