@@ -32,7 +32,7 @@ class BlogLogout(LogoutView):
 class BlogSignUp(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("blog-login")
-    template_name = "perfiles/signup.html"
+    template_name = "registration/signup.html"
 
 class ProfileUpdate(UpdateView):
     model = User
