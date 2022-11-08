@@ -30,12 +30,11 @@
                 <a href="{% url 'profile-detail' user.id %}">{{post.autor}}</a> el {{post.fecha}}
                 </p>
                 {% if user.is_authenticated %}
-                <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a>
+                <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a> |
                 <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a></p>
                 {% endif %}
             </div>
-        <p><a href="{% url 'blog-list' %}">Ir a la lista de blogs</a></p>
-        <a href="{% url 'index-blog' %}">
-        <p>Ir a blogs de la comunidad</a></p>
+        <p><a href="{% url 'blog-list' %}">Ir a la lista de blogs</a> |
+        <a href="{% url 'index-blog' %}">Ir a blogs de la comunidad</a></p>
         </div>
 {% endblock %}

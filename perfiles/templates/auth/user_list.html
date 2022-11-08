@@ -40,8 +40,8 @@
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'profile-detail' user.id %}">Ver más →</a>
                             {% if user.is_authenticated %}
                             <div>
-                            <p><a href="{% url 'profile-update' user.id %}">Actualizar</a></p>
-                            <p><a href="{% url 'profile-borrar' user.id %}">Borrar</a>
+                            <p><a href="{% url 'profile-update' user.id %}">Actualizar</a> |
+                            <a href="{% url 'profile-borrar' user.id %}">Borrar</a></p>
                             </div>
                             {% endif %}
                         </td>
