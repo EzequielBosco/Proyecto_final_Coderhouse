@@ -23,9 +23,6 @@
             <table class="table">
                 <tr><th>ID</th>
                     <th>Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Correo</th>
                     {% if user.is_authenticated %}
                     <th>Acciones</th>
                     {% endif %}
@@ -34,17 +31,13 @@
                     <tr>
                         <td>{{user.id}}</td>
                         <td>{{user.username}}</td>
-                        <td>{{user.first_name}}</td>
-                        <td>{{user.last_name}}</td>
-                        <td>{{user.email}}</td>
                         <td>
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'profile-detail' user.id %}">Ver más →</a>
-                            {% if user.is_authenticated %}
-                            <div>
-                            <p><a href="{% url 'profile-update' user.id %}">Actualizar</a> |
-                            <a href="{% url 'profile-borrar' user.id %}">Borrar</a></p>
-                            </div>
-                            {% endif %}
+                        <p><a href="{% url 'profile-update' user.id %}">Actualizar</a> |
+                        <a href="{% url 'profile-borrar' user.id %}">Borrar</a> |
+                        {% if user.is_authenticated %}
+                        <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'profile-detail' user.id %}">Ver más →</a>
+                        {% endif %}
+                        </p>
                         </td>
                     </tr>
                 {% endfor %}

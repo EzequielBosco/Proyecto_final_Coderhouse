@@ -16,18 +16,39 @@
         </div>
     </header>
     <!-- Main Content-->
-    <div class="container px-2 px-lg-6">
-    <h4>Formulario:</h4>
-    <form method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <button class="btn btn-primary text-uppercase endabled" type="submit">Iniciar sesión</button>
+        <div class="container px-1 px-lg-4 col-lg-20">
+            <h4>Formulario:</h4>
+        </div>
+            <!-- Divider-->
+            <hr class="my-4" />
+                <div class="container text-center">
+                    <div class="container">
+                        <div class="text-center">
+                            <form id="login-form" style=" width: 50vw; margin-left : 15vw;" method="post">
+                                {% csrf_token %}
+                                <table class="table">
+                                    <tbody><tr>
+                                        <td><label for="id_username">Usuario</label></td>
+                                        <td><input id="id_username" name="username" type="text" class="form-control"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="id_password">Contraseña</label></td>
+                                        <td><input id="id_password" name="password" type="password" class="form-control"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">Iniciar sesión</button>
+                            </form>
+                        </div>
+                    </div>
+                    <p>¿No tenés cuenta? <a href="{% url 'blog-signup' %}">Registrarme</a></p>
+                </div>
+        </div>
     </form>
-    <p> ¿No tenés cuenta?
-    <a href="{% url 'blog-signup' %}">Crear una cuenta nueva</a>
-    </p>
+    <div class="container px-1 px-lg-4 col-lg-20">
     {% if user.is_authenticated %}
     <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a> |
     <a href="{% url 'profile-update' user.id %}">Actualizar usuario</a></p>
     {% endif %}
+    </div>
 {% endblock %}

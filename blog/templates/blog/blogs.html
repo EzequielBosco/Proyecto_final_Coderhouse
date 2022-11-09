@@ -16,25 +16,27 @@
             </div>
         </header>
         <!-- Main Content-->
-        <div class="container px-1 px-lg-4 col-lg-8">
+        <div class="container px-1 px-lg-4 col-lg-10">
             <p>Navega por los Blogs de la comunidad, <a href="{% url 'blog-crear' %}">Creá tu propio Blog</a> o ingresa lo que más te interese en el buscador</p>
         </div>
-        <div class="container col-lg-5">
-        <div class="card mb-4 col-lg-10">
+        <div class="container justify-content-center px-lg-1 col-lg-5">
+        <div class="card mb-4 col-lg-8">
             <div class="card-header"><h5>Buscar</h5></div>
-                <div class="card-body mb-10 px-lg-4 col-lg-10">
+                <div class="card-body mb-10 px-lg-1 col-lg-10">
                 <form action="{% url 'search-by-name-post' %}" method="get">
                     {% csrf_token %}
                     <input type="search" placeholder="Ingresa tu busqueda..." name="post-titulo">
-                    <input class="btn-primary text-uppercase endabled" type="submit" value="Ir!">
+                    <input class="btn-outline-dark flex-shrink-0" type="submit" value="Ir!">
                 </form>     
                 </div>
             </div> 
         </div>
+        <!-- Divider-->
+        <hr class="my-4" />
         </div>
         <div class="container px-4 px-lg-8">
             <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="col-md-10 col-lg-8 col-xl-8">
                     <!-- Post preview-->
                     {% if post.0 %}
                     <div class="post-preview">
@@ -46,7 +48,7 @@
                         <p class="post-meta">
                             Creado por 
                             <a href="{% url 'user-list' %}">{{post.0.autor}}</a> el {{post.0.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.0.id %}">Leer más →</a>
+                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.0.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -63,7 +65,7 @@
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'user-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.1.id %}">Leer más →</a>
+                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.1.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -80,7 +82,7 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.2.id %}">Leer más →</a>
+                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.2.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -96,7 +98,7 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.3.id %}">Leer más →</a>
+                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.3.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -113,7 +115,7 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.4.id %}">Leer más →</a>
+                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.4.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}
@@ -130,7 +132,7 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
-                            <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.5.id %}">Leer más →</a>
+                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.5.id %}">Leer más →</a>
                         </p>
                     </div>
                     {% endif %}

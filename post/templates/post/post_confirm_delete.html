@@ -21,7 +21,7 @@
             <form method="post">
                 {{form}}
                 {% csrf_token %}
-                <input class="btn btn-primary text-uppercase endabled" type="submit" value="Borrar">
+                <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Borrar">
             </form>
             <p>
                 <a href="{% url 'blog-list' %}">Volver a la lista de blogs</a>

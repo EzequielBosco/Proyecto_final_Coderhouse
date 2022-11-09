@@ -20,7 +20,7 @@
             <form method="post">
                 {% csrf_token %}
                 <h6>"¿ Estás seguro de borrar el usuario {{ object }} ?"</h6>
-                <input class="btn btn-primary text-uppercase endabled" type="submit" value="Borrar">
+                <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Borrar">
             </form>
             <p>
             <a href="{% url 'user-list' %}">Volver a la lista de usuarios</a>

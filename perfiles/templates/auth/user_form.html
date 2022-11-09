@@ -18,9 +18,53 @@
     <!-- Main Content-->
     <div class="container px-6 px-lg-10">
         <h4>Formulario:</h4>
-    <form method="post">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input class="btn btn-primary text-uppercase endabled" type="submit" value="Guardar">
-    </form>
+    </div>
+    <!-- Divider-->
+    <hr class="my-4" />
+        <form style=" width: 50vw; margin-left : 15vw;" method="post">
+            {% csrf_token %}
+        <p>
+        <label for="id_email">Correo:</label>
+        <input type="email" name="email" class="form-control" required="" id="id_email">
+        </p>
+        <p>
+            <label for="id_username">Nombre de usuario:</label>
+                <input type="text" name="username" class="form-control" maxlength="20" autofocus="" required="" id="id_username">
+                <div class="small container text-muted fst-italic"> 
+                    <p>-Unicamente letras, numeros y @/./+/-/_</p>
+
+                </div>
+        </p>
+        <p>
+            <label for="id_name">Nombre:</label>
+                <input type="text" name="first_name" class="form-control" maxlength="20" required="" id="id_first_name">
+        </p>
+        <p>
+            <label for="id_telefono">Apellido:</label>
+                <input type="text" name="last_name" class="form-control" maxlength="20" required="" id="id_last_name">
+        </p>
+        <p>
+        <label for="id_password1">Contraseña:</label>
+        <input type="password" name="password1" class="form-control" required="" id="id_password1">
+        </p>
+        <div class="small container text-muted fst-italic"> 
+            <p>-Su contraseña no puede asemejarse tanto a su otra información personal.</p>
+            <p>-Su contraseña debe contener al menos 8 caracteres.</p>
+            <p>-Su contraseña no puede ser una clave utilizada comúnmente.</p>
+            <p>-Su contraseña no puede ser completamente numérica.</p>
+        </div>
+        <p>
+        <label for="id_password2">Repita Contraseña:</label>
+        <input type="password" name="password2" class="form-control" required="" id="id_password2">
+        </p>
+        <div class="container text-center">
+            <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Guardar">
+        </div>
+        </form>
+    <div class="container px-6 px-lg-10">
+    <p>
+        <a href="{% url 'user-list' %}">Ir a la lista de usuarios</a> |
+        <a href="{% url 'index-blog' %}">Ir a blogs de la comunidad</a>
+    </p>
+    </div>
 {% endblock %}

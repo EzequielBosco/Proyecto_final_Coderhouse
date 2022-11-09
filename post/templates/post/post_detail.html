@@ -20,7 +20,7 @@
         <div class="container px-2 px-lg-8">
             <div class="post-preview">
                 <h1 class="post-title">{{post.titulo}}</h1>
-                <h3 class="post-subtitle">{{post.sub_titulo}}</h3>
+                <h5 class="post-subtitle">{{post.sub_titulo}}</h5>
                 {% if  post.imagen %}
                 <img style="max-width:100%;" class="card-img-top" src="{{ post.imagen.url }}"/>    
                 {% endif %}
@@ -30,8 +30,8 @@
                 <a href="{% url 'profile-detail' user.id %}">{{post.autor}}</a> el {{post.fecha}}
                 </p>
                 {% if user.is_authenticated %}
-                <p><a href="{% url 'blog-borrar' post.id  %}">Borrar</a> |
-                <a href="{% url 'blog-actualizar' post.id  %}">Actualizar</a></p>
+                <a href="{% url 'blog-borrar' post.id  %}" class="btn btn-outline-dark flex-shrink-0">Borrar</a> |
+                <a href="{% url 'blog-actualizar' post.id  %}" class="btn btn-outline-dark flex-shrink-0">Actualizar</a>
                 {% endif %}
             </div>
         <p><a href="{% url 'blog-list' %}">Ir a la lista de blogs</a> |
