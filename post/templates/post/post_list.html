@@ -1,14 +1,15 @@
 {% extends 'blog/base.html' %}
 {% block nav %}{% endblock %}
 {% block contenido %}
+{% load static %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/post.jpg' %}');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Blogs</h1>
-                            <span class="subheading">Resultado de la búsqueda</span>
+                            <h2>Blogs</h2>
+                            <span>Resultado de la búsqueda</span>
                         </div>
                     </div>
                 </div>
@@ -36,7 +37,7 @@
                     <tr>
                         <td>{{post.id}}</td>
                         <td>{{post.titulo}}</td>
-                        <td><a href="{% url 'profile-detail' user.id %}">{{post.autor}}</a></td>
+                        <td><a href="{% url 'user-list' %}">{{post.autor}}</a></td>
                         <td>{{post.fecha}}</td>
                         <td>
                             <a class="btn btn-primary text-uppercase endabled" id="submitButton" type="submit" href="{% url 'blog-detail' post.id %}">Leer más →</a>

@@ -3,13 +3,13 @@
 {% block contenido %}
 {% load static %}
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/post-bg.jpg' %}');">
+        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/principal.jpg' %}');">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Blogs</h1>
-                            <span class="subheading">Blogs de la comunidad</span>
+                            <h2>Blogs</h2>
+                            <span>Blogs de la comunidad</span>
                         </div>
                     </div>
                 </div>
@@ -41,8 +41,8 @@
                         {% if  post.0.imagen %}
                         <a href="{% url 'blog-detail' post.0.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.0.imagen.url }}"/></a>        
                         {% endif %}
-                        <a href="{% url 'blog-detail' post.0.id %}"><h1 class="post-title">{{post.0.titulo}}</h1></a>
-                        <h3 class="post-subtitle">{{post.0.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.0.id %}"><h2 class="post-title">{{post.0.titulo}}</h2></a>
+                        <span class="post-subtitle">{{post.0.sub_titulo}}</span>
                         <p class="post-meta">
                             Creado por 
                             <a href="{% url 'user-list' %}">{{post.0.autor}}</a> el {{post.0.fecha}}
@@ -58,8 +58,8 @@
                         {% if  post.1.imagen %}
                         <a href="{% url 'blog-detail' post.1.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.1.imagen.url }}"/></a>
                         {% endif %}
-                        <a href="{% url 'blog-detail' post.1.id %}"><h1 class="post-title">{{post.1.titulo}}</h1></a>
-                        <h3 class="post-subtitle">{{post.1.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.1.id %}"><h2 class="post-title">{{post.1.titulo}}</h2></a>
+                        <span class="post-subtitle">{{post.1.sub_titulo}}</span>
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'user-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
@@ -75,8 +75,8 @@
                         {% if  post.2.imagen %}
                         <a href="{% url 'blog-detail' post.2.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.2.imagen.url }}"/></a>
                         {% endif %}
-                        <a href="{% url 'blog-detail' post.2.id %}"><h1 class="post-title">{{post.2.titulo}}</h1></a>
-                        <h3 class="post-subtitle">{{post.2.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.2.id %}"><h2 class="post-title">{{post.2.titulo}}</h2></a>
+                        <span class="post-subtitle">{{post.2.sub_titulo}}</span>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
@@ -91,8 +91,8 @@
                         {% if  post.3.imagen %}
                         <a href="{% url 'blog-detail' post.3.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.3.imagen.url }}"/></a>
                         {% endif %}
-                        <a href="{% url 'blog-detail' post.3.id %}"><h1 class="post-title">{{post.3.titulo}}</h1></a>
-                        <h3 class="post-subtitle">{{post.3.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.3.id %}"><h2 class="post-title">{{post.3.titulo}}</h2></a>
+                        <span class="post-subtitle">{{post.3.sub_titulo}}</span>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
@@ -108,8 +108,8 @@
                         {% if  post.4.imagen %}
                         <a href="{% url 'blog-detail' post.4.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.4.imagen.url }}"/></a>
                         {% endif %}
-                        <a href="{% url 'blog-detail' post.4.id %}"><h1 class="post-title">{{post.4.titulo}}</h1></a>
-                        <h3 class="post-subtitle">{{post.4.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.4.id %}"><h2 class="post-title">{{post.4.titulo}}</h2></a>
+                        <span class="post-subtitle">{{post.4.sub_titulo}}</span>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
@@ -125,8 +125,8 @@
                         {% if  post.5.imagen %}
                         <a href="{% url 'blog-detail' post.5.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.5.imagen.url }}"/></a>
                         {% endif %}
-                        <a href="{% url 'blog-detail' post.5.id %}"><h1 class="post-title">{{post.5.titulo}}</h1></a>
-                        <h3 class="post-subtitle">{{post.5.sub_titulo}}</h3>
+                        <a href="{% url 'blog-detail' post.5.id %}"><h2 class="post-title">{{post.5.titulo}}</h2></a>
+                        <span class="post-subtitle">{{post.5.sub_titulo}}</span>
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
