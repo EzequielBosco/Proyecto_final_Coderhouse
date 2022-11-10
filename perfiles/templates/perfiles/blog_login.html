@@ -26,14 +26,17 @@
                         <div class="text-center">
                             <form id="login-form" style=" width: 50vw; margin-left : 15vw;" method="post">
                                 {% csrf_token %}
+                                {% if form.errors %}
+                                <p style="color: red;"> Los datos ingresados son incorrectos, porfavor ingresar nuevamente</p>
+                                {% endif %}   
                                 <table class="table">
                                     <tbody><tr>
                                         <td><label for="id_username">Usuario</label></td>
-                                        <td><input id="id_username" name="username" type="text" class="form-control"></td>
+                                        <td><input id="id_username" name="username" placeholder="Ingrese su nombre de usuario..." type="text" class="form-control"></td>
                                     </tr>
                                     <tr>
                                         <td><label for="id_password">Contraseña</label></td>
-                                        <td><input id="id_password" name="password" type="password" class="form-control"></td>
+                                        <td><input id="id_password" name="password" placeholder="Ingrese su contraseña..." type="password" class="form-control"></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -41,7 +44,7 @@
                             </form>
                         </div>
                     </div>
-                    <p>¿No tenés cuenta? <a href="{% url 'blog-signup' %}">Registrarme</a></p>
+                    <p>¿No tenés cuenta? <a href="{% url 'blog-signup' %}">Registrarme</a></p>    
                 </div>
         </div>
     </form>

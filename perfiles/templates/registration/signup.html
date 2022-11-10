@@ -24,15 +24,23 @@
         <form style=" width: 50vw; margin-left : 15vw;" method="post">
             {% csrf_token %}
         <p>
-            <label for="id_username">Nombre de usuario:</label>
-                <input type="text" name="username" class="form-control" maxlength="20" autofocus="" required="" id="id_username">
+            <label for="id_email">Correo:</label>
+            <input type="email" name="email" class="form-control" required="" id="id_email">
+        </p>
+        <p>
+            <label for="id_username">Nombre de usuario</label>
+                <input type="text" name="username" class="form-control" maxlength="20" placeholder="Ingrese su nombre de usuario..." autofocus="" required="" id="id_username">
                 <div class="small container text-muted fst-italic"> 
                     <p>-Unicamente letras, numeros y @/./+/-/_</p>
                 </div>
         </p>
         <p>
-        <label for="id_password1">Contraseña:</label>
-        <input type="password" name="password1" class="form-control" required="" id="id_password1">
+        <label for="id_password1">Contraseña</label>
+        <input type="password" name="password1" class="form-control" placeholder="Ingrese su contraseña..." required="" id="id_password1">
+        </p>
+        <p>
+        <label for="id_password2">Repita Contraseña</label>
+        <input type="password" name="password2" class="form-control" placeholder="Repita su contraseña..." required="" id="id_password2">
         </p>
         <div class="small container text-muted fst-italic"> 
             <p>-Su contraseña no puede asemejarse tanto a su otra información personal.</p>
@@ -40,18 +48,17 @@
             <p>-Su contraseña no puede ser una clave utilizada comúnmente.</p>
             <p>-Su contraseña no puede ser completamente numérica.</p>
         </div>
-        <p>
-        <label for="id_password2">Repita Contraseña:</label>
-        <input type="password" name="password2" class="form-control" required="" id="id_password2">
-        </p>
         <div class="container text-center">
             <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Crear">
         </div>
+        {% if form.errors %}
+        <p style="color: red;"> Los datos ingresados no son correctos, intenta nuevamente</p>
+        {% endif %}  
         </form>
         <div class="container position-relative px-4 px-lg-2">
             <p> 
             ¿Ya tenés cuenta?
             <a href="{% url 'blog-login' %}">Iniciar sesión</a>
-            </p>
+            </p>     
         </div>
 {% endblock %}
