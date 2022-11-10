@@ -56,6 +56,7 @@
         <p>
         <label for="id_password2">Repita Contraseña:</label>
         <input type="password" name="password2" class="form-control" required="" id="id_password2">
+        {% csrf_token %}
         </p>
         <div class="container text-center">
             <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Guardar">

@@ -39,7 +39,7 @@
                 <div class="col-md-10 col-lg-8 col-xl-8">
                     <!-- Post preview-->
                     {% if post.0 %}
-                    <div class="post-preview">
+                    <div class="post-preview card h-15">
                         {% if  post.0.imagen %}
                         <a href="{% url 'blog-detail' post.0.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.0.imagen.url }}"/></a>        
                         {% endif %}
@@ -56,7 +56,7 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview card h-15">
                         {% if  post.1.imagen %}
                         <a href="{% url 'blog-detail' post.1.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.1.imagen.url }}"/></a>
                         {% endif %}
@@ -73,7 +73,7 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview card h-15">
                         {% if  post.2.imagen %}
                         <a href="{% url 'blog-detail' post.2.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.2.imagen.url }}"/></a>
                         {% endif %}
@@ -89,7 +89,7 @@
                     {% if  post.3 %}
                     <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview card h-15">
                         {% if  post.3.imagen %}
                         <a href="{% url 'blog-detail' post.3.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.3.imagen.url }}"/></a>
                         {% endif %}
@@ -106,7 +106,7 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview">
+                    <div class="post-preview card h-15">
                         {% if  post.4.imagen %}
                         <a href="{% url 'blog-detail' post.4.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.4.imagen.url }}"/></a>
                         {% endif %}
@@ -123,7 +123,7 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="div mb-4 post-preview">
+                    <div class="post-preview card h-15">
                         {% if  post.5.imagen %}
                         <a href="{% url 'blog-detail' post.5.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.5.imagen.url }}"/></a>
                         {% endif %}
