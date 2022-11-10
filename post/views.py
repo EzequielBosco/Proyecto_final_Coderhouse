@@ -6,20 +6,20 @@ from post.models import Post
 class PostList(LoginRequiredMixin, ListView):
     model = Post
 
-class CreatePost(CreateView):
+class CreatePost(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['autor', 'titulo', 'sub_titulo', 'cuerpo', 'imagen']
     success_url = reverse_lazy("blog-list")
 
-class DetailPost(DetailView):
+class DetailPost(LoginRequiredMixin, DetailView):
     model = Post
 
-class UpdatePost(UpdateView):
+class UpdatePost(LoginRequiredMixin, UpdateView):
     model = Post
     fields =['autor', 'titulo', 'sub_titulo', 'cuerpo', 'imagen']
     success_url = reverse_lazy("blog-list")
 
-class DeletePost(DeleteView):
+class DeletePost(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy("blog-list")
 

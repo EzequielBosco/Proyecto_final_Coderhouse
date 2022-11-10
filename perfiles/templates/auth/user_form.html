@@ -46,11 +46,6 @@
         <label for="id_password1">Contraseña:</label>
         <input type="password" name="password1" class="form-control" placeholder="Ingrese su contraseña..." required="" id="id_password1">
         </p>
-        <p>
-        <label for="id_password2">Repita Contraseña:</label>
-        <input type="password" name="password2" class="form-control" placeholder="Repita su contraseña..." required="" id="id_password2">
-        {% csrf_token %}
-        </p>
         <div class="small container text-muted fst-italic"> 
             <p>-Su contraseña no puede asemejarse tanto a su otra información personal.</p>
             <p>-Su contraseña debe contener al menos 8 caracteres.</p>
@@ -60,7 +55,10 @@
         <div class="container text-center">
             <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Guardar">
         </div>
-        </form>
+        {% if form.errors %}
+        <p style="color: red;"> Los datos ingresados no son correctos, intenta nuevamente</p>
+        {% endif %}
+        </form> 
     <div class="container px-6 px-lg-10">
     <p>
         <a href="{% url 'user-list' %}">Ir a la lista de usuarios</a> |
