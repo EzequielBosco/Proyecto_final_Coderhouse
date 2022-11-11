@@ -21,33 +21,29 @@
         </div>
             <!-- Divider-->
             <hr class="my-4" />
-                <div class="container text-center">
+                <div class="container">
                     <div class="container">
-                        <div class="text-center">
+                        <div class="my-5 ">
                             <form id="login-form" style=" width: 50vw; margin-left : 15vw;" method="post">
                                 {% csrf_token %}
                                 {% if form.errors %}
                                 <p style="color: red;"> Los datos ingresados son incorrectos, porfavor ingresar nuevamente</p>
                                 {% endif %}   
-                                <table class="table">
-                                    <tbody><tr>
-                                        <td><label for="id_username">Usuario</label></td>
-                                        <td><input id="id_username" name="username" placeholder="Ingrese su nombre de usuario..." type="text" class="form-control"></td>
-                                    </tr>
-                                    <tr>
-                                        <td><label for="id_password">Contraseña</label></td>
-                                        <td><input id="id_password" name="password" placeholder="Ingrese su contraseña..." type="password" class="form-control"></td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                <p>
+                                    <label for="id_username">Usuario</label>
+                                    <input id="id_username" name="username" placeholder="Ingrese su nombre de usuario..." type="text" class="form-control">
+                                </p>
+                                <p>
+                                    <label for="id_password">Contraseña</label>
+                                    <input id="id_password" name="password" placeholder="Ingrese su contraseña..." type="password" class="form-control">
+                                </p>
                                 <button class="btn btn-outline-dark flex-shrink-0" type="submit">Iniciar sesión</button>
                             </form>
                         </div>
+                        <p>¿No tenés cuenta? <a href="{% url 'blog-signup' %}">Registrarme</a></p>  
                     </div>
-                    <p>¿No tenés cuenta? <a href="{% url 'blog-signup' %}">Registrarme</a></p>    
                 </div>
-        </div>
-    </form>
+            </div>
     <div class="container px-1 px-lg-4 col-lg-20">
     {% if user.is_authenticated %}
     <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a> |

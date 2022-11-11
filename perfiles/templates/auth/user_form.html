@@ -24,34 +24,28 @@
         <form style=" width: 50vw; margin-left : 15vw;" method="post">
             {% csrf_token %}
         <p>
-        <label for="id_email">Correo:</label>
+        <label for="id_email">Correo</label>
         <input type="email" name="email" class="form-control" required="" id="id_email">
         </p>
         <p>
-            <label for="id_username">Nombre de usuario:</label>
+            <label for="id_username">Nombre de usuario</label>
                 <input type="text" name="username" class="form-control" maxlength="20" placeholder="Ingrese su nombre de usuario..." autofocus="" required="" id="id_username">
                 <div class="small container text-muted fst-italic"> 
                     <p>-Unicamente letras, numeros y @/./+/-/_</p>
                 </div>
         </p>
         <p>
-            <label for="id_name">Nombre:</label>
+            <label for="id_name">Nombre</label>
                 <input type="text" name="first_name" class="form-control" placeholder="Ingrese su nombre..." maxlength="20" required="" id="id_first_name">
         </p>
         <p>
-            <label for="id_telefono">Apellido:</label>
+            <label for="id_telefono">Apellido</label>
                 <input type="text" name="last_name" class="form-control" placeholder="Ingrese su apellido..." maxlength="20" required="" id="id_last_name">
         </p>
         <p>
-        <label for="id_password1">Contraseña:</label>
+        <label for="id_password1">Contraseña</label>
         <input type="password" name="password1" class="form-control" placeholder="Ingrese su contraseña..." required="" id="id_password1">
         </p>
-        <div class="small container text-muted fst-italic"> 
-            <p>-Su contraseña no puede asemejarse tanto a su otra información personal.</p>
-            <p>-Su contraseña debe contener al menos 8 caracteres.</p>
-            <p>-Su contraseña no puede ser una clave utilizada comúnmente.</p>
-            <p>-Su contraseña no puede ser completamente numérica.</p>
-        </div>
         <div class="container text-center">
             <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Guardar">
         </div>

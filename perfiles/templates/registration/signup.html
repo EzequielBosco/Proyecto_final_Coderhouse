@@ -21,10 +21,11 @@
     </div>
     <!-- Divider-->
     <hr class="my-4" />
+    <div class="my-5 container">
         <form style=" width: 50vw; margin-left : 15vw;" method="post">
             {% csrf_token %}
         <p>
-            <label for="id_email">Correo:</label>
+            <label for="id_email">Correo</label>
             <input type="email" name="email" class="form-control" placeholder="Ingrese su correo..." required="" id="id_email">
         </p>
         <p>
@@ -61,4 +62,5 @@
             <a href="{% url 'blog-login' %}">Iniciar sesión</a>
             </p>     
         </div>
+    </div>
 {% endblock %}

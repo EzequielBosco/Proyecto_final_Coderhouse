@@ -15,3 +15,6 @@ class Contacto(models.Model):
     numero_telefono = models.CharField(max_length=20)
     mensaje = models.TextField(max_length=2000)
     fecha = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Id: {self.id}, Nombre: {self.nombre}, Fecha: {self.fecha}"
