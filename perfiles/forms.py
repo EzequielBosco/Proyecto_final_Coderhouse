@@ -8,14 +8,14 @@ from django.forms.forms import Form
 class CustomUserCreationForm(UserCreationForm):  
     username = forms.CharField(label='username', min_length=5, max_length=150)  
     email = forms.EmailField(label='email')  
-    password1 = forms.CharField(label='password', widget=forms.PasswordInput)  
-    password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)  
+    password1 = forms.CharField(label='password1', widget=forms.PasswordInput)  
+    password2 = forms.CharField(label='password2', widget=forms.PasswordInput)  
   
     def email_clean(self):  
         email = self.cleaned_data['email'].lower()  
         new = User.objects.filter(email=email)  
         if new.count():  
-            raise ValidationError(" Email Already Exist")  
+            raise ValidationError("El correo ya esta en uso")  
         return email  
 
     def save(self, commit = True):  

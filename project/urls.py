@@ -17,14 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from blog.views import Home, About, Contact, Blogs, Error404View
+from blog.views import Home, About, Blogs, Error404View, Contacto
 from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home, name='pagina-principal'),
     path('about/', About, name='nosotros'),
-    path('contact/', Contact, name="contacto"),
+    path('contact/', Contacto.as_view(), name="contacto"),
     path('pages/', Blogs, name="index-blog"),
     path('accounts/', include('perfiles.urls')),
     path('pages/', include('post.urls')),

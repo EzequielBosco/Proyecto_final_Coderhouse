@@ -1,0 +1,54 @@
+{% extends 'blog/base.html' %}
+{% block nav %}{% endblock %}
+{% block contenido %}
+{% load static %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('{% static 'blog/assets/img/b.jpg' %}');">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h2>Contactanos</h2>
+                            <span>¿Tenes una duda? Nosotros te la respondemos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content-->
+        <main class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>¿Querés ponerte en contacto? Completa el formulario para que podamos comunicarnos lo más rápido posible!</p>
+                        <div class="my-5">
+                            <form id="contactForm" data-sb-form-api-token="API_TOKEN" form  enctype='multipart/form-data' method="post">
+                                {% csrf_token %}
+                                <div class="form-floating">
+                                <p>
+                                    <label for="id_nombre">Nombre</label>
+                                        <input type="text" name="nombre" class="form-control" maxlength="20" placeholder="Ingrese su nombre..." autofocus="" required="" id="id_nombre">
+                                </p>
+                                <p>
+                                    <label for="id_correo">Correo</label>
+                                    <input type="email" name="correo" class="form-control" placeholder="Ingrese su correo..." required="" data-sb-validations="required,email" id="id_correo">
+                                </p>
+                                <p>
+                                <label for="id_numero_telefono">Número de Teléfono</label>
+                                <input type="tel" name="numero_telefono" class="form-control" placeholder="Ingrese su número de teléfono..." required="" id="id_numero_telefono">
+                                </p>
+                                <p>
+                                <label for="id_mensaje">Mensaje</label>
+                                <textarea type="text" name="mensaje" class="form-control" style="height: 10rem" placeholder="Ingrese su mensaje..." required="" id="id_mensaje"></textarea>
+                                </p>
+                            </div>
+                                <!-- Submit Button-->
+                                <input class="btn btn-outline-dark flex-shrink-0" type="submit" value="Enviar">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+{% endblock %}
