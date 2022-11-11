@@ -1,44 +1,56 @@
-# Proyecto_final_Coderhouse
+# Proyecto Final Coderhouse Python
 Este es el proyecto final de Coderhouse, se trata de un sistema web realizado en python con django
-## lista de integrantes 
+## Lista de integrantes 
+Comisión 44065
 - Ezequiel Bosco
 - Esteban Santillan
 
-# Proyecto final CoderHouse
-Este blog realizado en django 4.0.3, Es un blog que habla sobre Programacion donde cualquier usuario puede registrarse 
-y publicar algo relacionado con el tema.
-- Requiere tener instalado
+# Proyecto Codeo Blog
+Página web de un blog que habla sobre Tecnologias de Programacion, donde cualquier usuario puede:
+- Registrar una cuenta en registro de la barra de navegación
+- Iniciar sesión
+- Modificar el usuario
+- Borra el usuario
+- Ver los blogs publicados
+- Crear un blog
+- Editar un blog
+- Borrar un blog
+- Dejar un mensaje de contacto
+- Ver más información sobre los desarrolladores en Acerca de nosotros de la barra de navegación
+
+# Tecnología usada
+- Pyhon
+- Django
+- Html
+- Css
+- Javascript
+- Bootstrap
+
+# Requisitos para correr el proyecto
+## Tener instalado:
 ```python
-pillow version 22.0.4
-whitenoise version 6.2.0
 python version 3.10.8 
 django version 4.0.3
+pillow version 9.3.6
+whitenoise version 6.2.0
 ```
-## requisitos para correr el proyecto
- Realizar las migraciones,este proyecto usa sqlite3 
-- python manage.py makemigrations
-- python manage.py migrate
-juntar los estaticos
--python manage.py collectstatic
+## Correr los comandos: 
+Para realizar las migraciones,este proyecto usa SQLite3
+```python
+> python manage.py makemigrations
+> python manage.py migrate
+
+```
+
+Para juntar los estaticos (imagenes)
+```python
+> python manage.py collectstatic
+
+```
 
 ## Para ir al blog se necesita:
 - Correr test server en terminal
 ```python
 > python manage.py runserver
 ```
-- Ir a localhost:8000/ 
- Vas a tener acceso al blog.
-## Para ir al inicio
-- Ir a localhost:8000/
-## Para ver los blogs:
-- Ir a la barra de navegacion blogs
-## para ir a acerca de nosotros  :
-- Ir a la barra de navegacion acerca de nosotros
-## Para ir a contacto :
-- Ir a barra de navegacion contacto 
-## para iniciar sesion :
-- Ir a la barra de navegacion iniciar sesion
-- completar el formulario.
-## para registrate :
-- ir a barra de navegacion registrarme 
-- completar el fomulario 
+- Ir a localhost:8000/ en el navegador, una vez ahí ya vas a tener acceso al inicio del blog y a sus utilidades antes mencionadas.
