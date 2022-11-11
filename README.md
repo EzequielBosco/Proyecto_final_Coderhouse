@@ -17,6 +17,7 @@ Página web de un blog que habla sobre Tecnologias de Programacion, donde cualqu
 - Borrar un blog
 - Dejar un mensaje de contacto
 - Ver más información sobre los desarrolladores en Acerca de nosotros de la barra de navegación
+- Dejar un mensaje de reseña en Acerca de nosotros
 
 # Tecnología usada
 - Pyhon
