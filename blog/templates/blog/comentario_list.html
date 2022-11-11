@@ -8,8 +8,8 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h2>{{configabout.titulo}}</h2>
-                            <span>{{configabout.sub_titulo}}</span>
+                            <h2>Acerca de nosotros</h2>
+                            <span>Ezequiel y Esteban, dos estudiantes de CoderHouse te cuentan quiénes son y porque crearon Codeo Blog</span>
                         </div>
                     </div>
                 </div>
@@ -20,6 +20,7 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
+                        <h5>¿Quiénes somos?</h5>
                         <p>Ezequiel Bosco 23 años de Castelar provincia de Buenos Aires y Esteban Santillán 28 años de Luján provincia de Buenos Aires,
                             dos estudiantes argentinos que estudiaron en coderhouse te cuentan sobre su blog. </p>
                         <p>Creamos Codeo Blog para vos, para que te acompañe en tus dudas y puedas potenciar tus conocimientos.</p>
@@ -28,6 +29,29 @@
                         <p>Queremos que la gente cree debates, muestre diferentes opiniones sobre los temas a publicar y lo más importante, formar una comunidad.</p>
                     </div>
                 </div>
+            </div>
+            <!-- Divider-->
+                <hr class="my-4" />
+            </div>
+            <div class="container">
+                <a href="{% url 'crear-comentario' %}" class="btn btn-outline-dark flex-shrink-0">Crear comentario reseña</a>
+            </div>
+                
+            <div class="container px-4 px-lg-5">
+            <p>
+                <h5>Comentarios:</h5>
+                {% for comentario in object_list %}
+                <div class='container' style="margin:50px">
+                <p>
+                <h6 class="post-subtitle">{{comentario.nombre}}</h6> 
+                </p>
+                <p class="post-meta" style="font-family: Georgia, serif">
+                {{comentario.mensaje}}.
+                </p>
+                <p style="font-family: courier" >Publicado el {{comentario.fecha}}</p>
+                </div>
+                {% endfor %}
+            </p>
             </div>
         </main>
 

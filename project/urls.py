@@ -17,17 +17,19 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from blog.views import Home, About, Blogs, Error404View, Contacto
+from blog.views import Home, Blogs, Error404View, Contacto
 from django.conf.urls import handler404
+from blog.views import CreateComentario, ComentarioList
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home, name='pagina-principal'),
-    path('about/', About, name='nosotros'),
     path('contact/', Contacto.as_view(), name="contacto"),
     path('pages/', Blogs, name="index-blog"),
     path('accounts/', include('perfiles.urls')),
     path('pages/', include('post.urls')),
+    path('comentario/', CreateComentario.as_view(), name="crear-comentario"),
+    path('about/', ComentarioList.as_view(), name="nosotros"),
 ]
 
 handler404 = Error404View.as_view()

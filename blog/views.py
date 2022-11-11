@@ -3,16 +3,14 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
-from blog.models import ConfigIndex, ConfigAbout, Contacto
+from blog.models import ConfigIndex, Contacto, Comentario
 from post.models import Post
+from django.views.generic import ListView, CreateView
+from blog.forms import ComentarioForm
 
 def Home(request):
     configindex = ConfigIndex.objects.first()
     return render (request, "blog/index.html", {"configindex":configindex})
-
-def About(request):
-    configabout = ConfigAbout.objects.first()
-    return render (request, "blog/about.html", {"configabout":configabout})
 
 class Contacto(CreateView):
     model = Contacto
@@ -26,3 +24,11 @@ def Blogs(request):
 
 class Error404View(TemplateView):
     template_name = "blog/error_404.html"
+
+class ComentarioList(ListView):
+    model = Comentario
+
+class CreateComentario(CreateView):
+    model = Comentario
+    fields = ['nombre', 'mensaje']
+    success_url = reverse_lazy("nosotros")

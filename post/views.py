@@ -23,7 +23,6 @@ class DeletePost(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy("blog-list")
 
-
 class SearchPostByname(ListView):
     def get_queryset(self):
         post_title = self.request.GET.get('post-titulo')

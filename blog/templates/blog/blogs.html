@@ -138,6 +138,6 @@
                     {% endif %}
                 </div>
             </div>
-            <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a> | <a href="{% url 'profile-update' user.id %}">Actualizar usuario</a></p>
+            <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a> | <a href="{% url 'profile-update' user.id %}">Actualizar usuario </a> | <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'user-list' %}">   Lista de Usuarios →</a></p>
         </div>
 {% endblock %}
