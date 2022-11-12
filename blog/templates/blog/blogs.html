@@ -34,6 +34,11 @@
         <!-- Divider-->
         <hr class="my-4" />
         </div>
+        <div class="container col-md-3 col-lg-4 col-xl-3">
+        <h3>Última publicación</h3>
+        </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
         <div class="container px-4 px-lg-8">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-8">
@@ -52,11 +57,22 @@
                         </p>
                     </div>
                     {% endif %}
+                </div>
+            </div>
+        </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+        <div class="container col-md-4 col-lg-4 col-xl-4">
+        <h3>Publicados recientemente</h3>
+        </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+        <div class="container">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-2 row-cols-xl-2 justify-content-center">
+            <div class="col mb-5">
                     {% if  post.1 %}
-                    <!-- Divider-->
-                    <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview card h-15">
+                    <div class="card h-100">
                         {% if  post.1.imagen %}
                         <a href="{% url 'blog-detail' post.1.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.1.imagen.url }}"/></a>
                         {% endif %}
@@ -65,15 +81,17 @@
                     <p class="post-meta">
                         Creado por
                         <a href="{% url 'user-list' %}">{{post.1.autor}}</a> el {{post.1.fecha}}
+                        <div class="container text-center">
                             <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.1.id %}">Leer más →</a>
+                        </div>
                         </p>
                     </div>
                     {% endif %}
+            </div>
+            <div class="col mb-5">
                     {% if  post.2 %}
-                    <!-- Divider-->
-                    <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview card h-15">
+                    <div class="card h-100">
                         {% if  post.2.imagen %}
                         <a href="{% url 'blog-detail' post.2.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.2.imagen.url }}"/></a>
                         {% endif %}
@@ -82,14 +100,16 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.2.autor}}</a> el {{post.2.fecha}}
-                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.2.id %}">Leer más →</a>
+                            <div class="container text-center">
+                                <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.2.id %}">Leer más →</a>
+                            </div>
                         </p>
                     </div>
                     {% endif %}
+            </div>
                     {% if  post.3 %}
-                    <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview card h-15">
+                    <div class="card h-100">
                         {% if  post.3.imagen %}
                         <a href="{% url 'blog-detail' post.3.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.3.imagen.url }}"/></a>
                         {% endif %}
@@ -98,15 +118,16 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.3.autor}}</a> el {{post.3.fecha}}
-                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.3.id %}">Leer más →</a>
+                            <div class="container text-center">
+                                <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.3.id %}">Leer más →</a>
+                            </div>
                         </p>
                     </div>
                     {% endif %}
+            <div class="col mb-5">
                     {% if  post.4 %}
-                    <!-- Divider-->
-                    <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview card h-15">
+                    <div class="card h-100">
                         {% if  post.4.imagen %}
                         <a href="{% url 'blog-detail' post.4.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.4.imagen.url }}"/></a>
                         {% endif %}
@@ -115,15 +136,16 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.4.autor}}</a> el {{post.4.fecha}}
-                            <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.4.id %}">Leer más →</a>
+                            <div class="container text-center">
+                                <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.4.id %}">Leer más →</a>
+                            </div>
                         </p>
                     </div>
                     {% endif %}
+            </div>
                     {% if  post.5 %}
-                    <!-- Divider-->
-                    <hr class="my-4" />
                     <!-- Post preview-->
-                    <div class="post-preview card h-15">
+                    <div class="card h-100">
                         {% if  post.5.imagen %}
                         <a href="{% url 'blog-detail' post.5.id %}"><img style="max-width:100%;" class="card-img-top" src="{{ post.5.imagen.url }}"/></a>
                         {% endif %}
@@ -132,12 +154,19 @@
                         <p class="post-meta">
                             Creado por
                             <a href="{% url 'user-list' %}">{{post.5.autor}}</a> el {{post.5.fecha}}
+                        <div class="container text-center">
                             <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'blog-detail' post.5.id %}">Leer más →</a>
+                        </div>
                         </p>
                     </div>
                     {% endif %}
                 </div>
             </div>
-            <p><a href="{% url 'blog-logout' %}">Salir de la sesión</a> | <a href="{% url 'profile-update' user.id %}">Actualizar usuario </a> | <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'user-list' %}">   Lista de Usuarios →</a></p>
+        </div>
+        </div>
+        <!-- Divider-->
+        <hr class="my-4" />
+        <div class="container text-center">
+            <p><a href="{% url 'blog-logout' %}" class="btn btn-outline-dark flex-shrink-0">Salir de la sesión</a> | <a href="{% url 'profile-update' user.id %}">Actualizar usuario </a> | <a class="btn btn-outline-dark flex-shrink-0" id="submitButton" type="submit" href="{% url 'user-list' %}">   Lista de Usuarios</a></p>
         </div>
 {% endblock %}
