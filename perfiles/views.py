@@ -23,7 +23,7 @@ class ProfileList(LoginRequiredMixin, ListView):
     model = User
 
 class ProfileBorrar(LoginRequiredMixin, DeleteView):
-    form_class = CustomUserCreationForm
+    model = User
     success_url = reverse_lazy("user-list")
 
 class ProfileUpdate(LoginRequiredMixin, UpdateView):
