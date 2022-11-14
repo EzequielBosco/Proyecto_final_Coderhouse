@@ -54,7 +54,7 @@ Para juntar los estaticos (imagenes)
 ```python
 > python manage.py runserver
 ```
-- Ir a localhost:8000/ en el navegador, una vez ahí ya vas a tener acceso al inicio del blog y a sus utilidades antes mencionadas.
+- Ir a http://127.0.0.1:8000/ en el navegador, una vez ahí ya vas a tener acceso al inicio del blog y a sus utilidades antes mencionadas.
 
 # Link Video
 https://youtu.be/L-rjNHwxodg
