@@ -1,1 +1,1 @@
-web: gunicorn miSitio.wsgi
+web: gunicorn codeoblog-python.wsgi
