@@ -1,10 +1,5 @@
 from django.db import models
 
-class ConfigIndex(models.Model):
-    titulo = models.CharField(max_length=20)
-    sub_titulo = models.CharField(max_length=30)
-    sub_titulo_1 = models.CharField(max_length=30)
-
 class Contacto(models.Model):
     nombre = models.CharField(max_length=20)
     correo = models.EmailField(max_length=50)
