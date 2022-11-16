@@ -36,7 +36,6 @@
             <div class="container">
                 <a href="{% url 'crear-comentario' %}" class="btn btn-outline-dark flex-shrink-0">Crear comentario reseña</a>
             </div>
-                
             <div class="container px-4 px-lg-5">
             <p>
                 <h5>Comentarios:</h5>
@@ -48,11 +47,10 @@
                 <p class="post-meta" style="font-family: Georgia, serif">
                 {{comentario.mensaje}}.
                 </p>
-                <p style="font-family: courier" >Publicado el {{comentario.fecha}}</p>
+                <p style="font-family: courier">Publicado el {{comentario.fecha}}</p>
                 </div>
                 {% endfor %}
             </p>
             </div>
         </main>
-
 {% endblock %}
