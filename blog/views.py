@@ -3,14 +3,13 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
-from blog.models import ConfigIndex, Contacto, Comentario
+from blog.models import Contacto, Comentario
 from post.models import Post
 from django.views.generic import ListView, CreateView
 from blog.forms import ComentarioForm
 
 def Home(request):
-    configindex = ConfigIndex.objects.first()
-    return render (request, "blog/index.html", {"configindex":configindex})
+    return render (request, "blog/index.html")
 
 class Contacto(CreateView):
     model = Contacto
